@@ -3,7 +3,7 @@ name: Deploy to Render
 on:
   push:
     branches:
-      - main  # Puedes cambiar esto por cualquier otra rama que uses
+      - main  
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9  # Asegúrate de usar la versión que tu app necesita
+          python-version: 3.9  
       
       - name: Install dependencies
         run: |
@@ -24,7 +24,7 @@ jobs:
       
       - name: Deploy to Render
         env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}  # Agrega tu API key a los secretos de GitHub
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }} 
         run: |
           curl -X POST "https://api.render.com/v1/services/<tu-service-id>/deploys" \
           -H "Authorization: Bearer $RENDER_API_KEY"
