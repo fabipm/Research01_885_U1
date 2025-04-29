@@ -24,6 +24,9 @@ app.layout = html.Div([
     dcc.Graph(figure=fig)
 ])
 
-# Para Render necesitamos especificar host y puerto
+# --- Agregar esto para que Gunicorn pueda usar el servidor ---
+server = app.server
+
+# Para correr localmente
 if __name__ == "__main__":
     app.run_server(host="0.0.0.0", port=8080, debug=True)
