@@ -9,7 +9,7 @@ app = dash.Dash(__name__)
 # Datos de ejemplo
 data = {
     "Fecha": ["2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05"],
-    "Ventas": [200, 400, 300, 500, 450],
+    "Ventas": [100, 400, 300, 500, 450],
     "Categoría": ["Electrónica", "Electrónica", "Ropa", "Ropa", "Electrónica"]
 }
 df = pd.DataFrame(data)
